@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  [symbol: MyString
+  name: MyString
+  ask: 9.99
+  bid: 
+
+two:
+  [symbol: MyString
+  name: MyString
+  ask: 9.99
+  bid: 

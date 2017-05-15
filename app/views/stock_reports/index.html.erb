@@ -1,0 +1,9 @@
+<h1>Reports</h1>
+
+<%= link_to 'Generate', {:action => 'generate'} %>
+
+<ul>
+  <% @reports.each do |report| %>
+    <li><%= report.created_at %> <%= link_to 'Download', {:action => 'download', :id => report.id} %></li>
+  <% end %>
+</ul>

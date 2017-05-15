@@ -1,0 +1,24 @@
+<h1>Edit Settings</h1>
+
+<%= form_for :setting, url: settings_update_path do |f| %>
+    <% if @setting.errors.any? %>
+        <div id="error_explanation">
+          <h2>Settings could not be saved</h2>
+          <ul>
+              <% @setting.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div>
+      <%= f.label :quote_update_interval %>
+      <%= f.text_field :quote_update_interval %>
+    </div>
+
+    <div>
+      <%= f.submit %>
+    </div>
+
+<% end %>

@@ -1,0 +1,27 @@
+<h1>Quotes</h1>
+
+<%= link_to 'Update Now', {:action => 'update'} %> |
+<%= link_to 'Reports', {:controller => 'stock_reports', :action => 'index'} %> |
+<%= link_to 'Settings', {:controller => 'settings', :action => 'edit' } %> |
+<%= link_to 'Errors', {:controller => 'errors', :action => 'index'} %>
+
+<% @stock_quotes.each_key do |key| %>
+    <h2><%= key %></h2>
+
+    <table>
+      <tr>
+        <th>Time (UTC)</th>
+        <th>Ask Price</th>
+        <th>Bid Price</th>
+      </tr>
+      <% @stock_quotes[key].each do |quote| %>
+          <tr>
+            <td><%= quote.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+            <td><%= quote.ask %></td>
+            <td><%= quote.bid %></td>
+          </tr>
+      <% end %>
+    </table>
+
+<% end %>
+

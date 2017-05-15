@@ -1,0 +1,13 @@
+<h1>Errors</h1>
+<table>
+  <tr>
+    <th>Time</th>
+    <th>Error Message</th>
+  </tr>
+  <% @errors.each do |error| %>
+    <tr>
+      <td><%= error.created_at.strftime('%d/%m/%Y %H:%M') %><td>
+      <td><%= error.message %></td>
+    </tr>
+  <% end %>
+</table>
