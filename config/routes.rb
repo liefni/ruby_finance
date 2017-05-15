@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '', to: 'quotes#index'
   get 'quotes/update'
+  get 'quotes/start_updates'
+  get 'quotes/stop_updates'
 
   get 'stock_reports/generate'
   get 'stock_reports', to: 'stock_reports#index'

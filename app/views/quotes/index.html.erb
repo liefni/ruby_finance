@@ -4,6 +4,15 @@
 <%= link_to 'Reports', {:controller => 'stock_reports', :action => 'index'} %> |
 <%= link_to 'Settings', {:controller => 'settings', :action => 'edit' } %> |
 <%= link_to 'Errors', {:controller => 'errors', :action => 'index'} %>
+<% if @task.scheduled? %>
+    | <%= link_to 'Stop Updates', {:action => 'stop_updates'} %>
+<% else %>
+    | <%= link_to 'Start Updates', {:action => 'start_updates'} %>
+<% end %>
+
+<%if @errors.count > 0 %>
+    <h3><%= pluralize(@errors.count, 'error') %> downloading quotes in the last hour</h3>
+<% end %>
 
 <% @stock_quotes.each_key do |key| %>
     <h2><%= key %></h2>

@@ -4,6 +4,6 @@
 
 <ul>
   <% @reports.each do |report| %>
-    <li><%= report.created_at %> <%= link_to 'Download', {:action => 'download', :id => report.id} %></li>
+    <li><%= report.created_at.strftime('%d/%m/%Y %H:%M') %> <%= link_to 'Download', {:action => 'download', :id => report.id} %></li>
   <% end %>
 </ul>

@@ -10,6 +10,8 @@ class SettingsController < ApplicationController
     else
       render 'edit'
     end
+
+    ScheduledTask.tasks[:update_quotes].interval = @setting.quote_update_interval.to_s + 'm'
   end
 
   private
